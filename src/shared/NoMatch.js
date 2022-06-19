@@ -1,3 +1,4 @@
 import React from "react";
 
-export const NoMatch = () => <div>Four Oh Four</div>;
+const NoMatch = () => <div>Four Oh Four</div>;
+export { NoMatch };

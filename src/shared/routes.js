@@ -1,4 +1,4 @@
-import Home from "./Home";
+import { Home } from "./Home";
 import Grid from "./Grid";
 import { fetchPopularRepos } from "./api";
 
@@ -15,4 +15,4 @@ const routes = [
   },
 ];
 
-export default routes;
+export { routes };

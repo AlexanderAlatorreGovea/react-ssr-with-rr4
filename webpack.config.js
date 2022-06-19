@@ -18,12 +18,13 @@ const browserConfig = {
       __isBrowser__: "true",
     }),
   ],
+  externals: ['fs']
 };
 
 const serverConfig = {
   entry: "./src/server/index.js",
   target: "node",
-  externals: [nodeExternals()],
+  externals: [nodeExternals(), 'fs'],
   output: {
     path: __dirname,
     filename: "server.js",

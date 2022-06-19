@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => {
   const languages = [
     {
       name: "All",
@@ -40,3 +40,5 @@ export const Navbar = () => {
     </ul>
   );
 };
+
+export { Navbar };
