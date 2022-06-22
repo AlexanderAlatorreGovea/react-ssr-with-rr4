@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { routes } from "./routes";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Router } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { NoMatch } from "./NoMatch";
+import { createMemoryHistory } from 'history';
 
 const App = () => (
-  <div>
-    <Navbar />
+    <div>
+      <Navbar />
       <Switch>
         {routes.map(({ path, exact, component: Component, ...rest }) => (
           <Route
@@ -18,7 +19,7 @@ const App = () => (
         ))}
         <Route render={(props) => <NoMatch {...props} />} />
       </Switch>
-  </div>
+    </div>
 );
 
 export { App };

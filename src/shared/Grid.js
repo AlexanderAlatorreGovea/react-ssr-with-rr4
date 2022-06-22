@@ -5,6 +5,7 @@ class Grid extends Component {
     super(props);
 
     let repos;
+
     if (__isBrowser__) {
       repos = window.__INITIAL_DATA__;
       delete window.__INITIAL_DATA__;
@@ -19,16 +20,19 @@ class Grid extends Component {
 
     this.fetchRepos = this.fetchRepos.bind(this);
   }
+
   componentDidMount() {
     if (!this.state.repos) {
       this.fetchRepos(this.props.match.params.id);
     }
   }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.fetchRepos(this.props.match.params.id);
     }
   }
+
   fetchRepos(lang) {
     this.setState(() => ({
       loading: true,
@@ -41,10 +45,11 @@ class Grid extends Component {
       }))
     );
   }
+  
   render() {
     const { loading, repos } = this.state;
 
-    if (loading === true) {
+    if (loading) {
       return <p>LOADING</p>;
     }
 

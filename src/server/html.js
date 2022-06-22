@@ -12,7 +12,7 @@ export const html = (content, data) => `
         <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
         <body>
-        <div id="root">${content}</div>
+        <div id="app">${content}</div>
         </body>
     </html>
 `;
